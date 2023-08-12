@@ -32,13 +32,13 @@ requirements:
     - {{ compiler('cxx') }}
     - pkgconfig              # [unix]
     - cmake 
-    - boost 1.74 # [linux]
+    - boost 1.78 # [linux]
     - git
     - ninja
     - setuptools             # [win] 
   host:
     - python {{ python }}
-    - vtk {{ vtk }}
+    - vtk 9.1.0 #{{ vtk }}
     - libitk {{ itk }}
     - libitk-devel {{ itk }}
     - numpy >=1.20

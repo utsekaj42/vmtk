@@ -8,6 +8,10 @@ else()
   set(VTK_TARGET_PREFIX "VTK::")
 endif()
 
+include(GNUInstallDirs) # This defines  #https://cmake.org/cmake/help/latest/module/GNUInstallDirs.html
+# CMAKE_INSTALL_LIBDIR # lib vs lib64 or other..
+# CMAKE_INSTALL_BINDIR # bin
+
 include(${VMTK_SOURCE_DIR}/CMake/vmtkFunctions.cmake)
 
 set(dirs
@@ -51,19 +55,19 @@ if (VTK_USE_COCOA)
 endif ()
 
 if(NOT VTK_VMTK_INSTALL_BIN_DIR)
-  set(VTK_VMTK_INSTALL_BIN_DIR bin)
+  set(VTK_VMTK_INSTALL_BIN_DIR $CMAKE_INSTALL_BINDIR)
 endif()
 
 if(NOT VTK_VMTK_INSTALL_INCLUDE_DIR)
-  set(VTK_VMTK_INSTALL_INCLUDE_DIR include/vmtk)
+  set(VTK_VMTK_INSTALL_INCLUDE_DIR ${CMAKE_INSTALL_INCLUDEDIR}/vmtk)
 endif()
 
 if(NOT VTK_VMTK_INSTALL_LIB_DIR)
-  set(VTK_VMTK_INSTALL_LIB_DIR lib)
+  set(VTK_VMTK_INSTALL_LIB_DIR $CMAKE_INSTALL_LIBDIR)
 endif()
 
 if(NOT VTK_VMTK_MODULE_INSTALL_LIB_DIR)
-  set(VTK_VMTK_MODULE_INSTALL_LIB_DIR lib/${VMTK_PYTHON_VERSION}/site-packages/vmtk)
+  set(VTK_VMTK_MODULE_INSTALL_LIB_DIR ${CMAKE_INSTALL_LIBDIR}/${VMTK_PYTHON_VERSION}/site-packages/vmtk)
 endif()
 
 include_directories (${VTK_VMTK_SOURCE_DIR})

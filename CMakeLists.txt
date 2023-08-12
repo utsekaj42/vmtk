@@ -217,6 +217,7 @@ endforeach()
 
 option(VMTK_MINIMAL_INSTALL "Do not install individual scripts, only vmtk.py" OFF)
 
+
 set(LIBRARY_OUTPUT_PATH ${VMTK_BINARY_DIR}/bin CACHE PATH
     "Single output directory for building all libraries.")
 set(EXECUTABLE_OUTPUT_PATH ${VMTK_BINARY_DIR}/bin CACHE PATH
