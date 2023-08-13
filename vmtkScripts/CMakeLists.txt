@@ -164,7 +164,7 @@ if(NOT VMTK_SCRIPTS_INSTALL_BIN_DIR)
 endif()
 
 if(NOT VMTK_SCRIPTS_INSTALL_LIB_DIR)
-  set(VMTK_SCRIPTS_INSTALL_LIB_DIR lib/${VMTK_PYTHON_VERSION}/site-packages/vmtk)
+  set(VMTK_SCRIPTS_INSTALL_LIB_DIR ${CMAKE_INSTALL_LIBDIR}/${VMTK_PYTHON_VERSION}/site-packages/vmtk)
 endif()
 
 add_subdirectory(resources)

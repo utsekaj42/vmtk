@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(VMTK)
+enable_language(CXX)
+include(GNUInstallDirs)
 
 # vmtk versions number
 set(VMTK_VERSION_MAJOR 1)
@@ -233,11 +235,11 @@ set(VMTK_MODULE_SRCS
    )
 
 if(NOT VMTK_INSTALL_BIN_DIR)
-  set(VMTK_INSTALL_BIN_DIR bin)
+  set(VMTK_INSTALL_BIN_DIR ${CMAKE_INSTALL_BINDIR})
 endif()
 
 if(NOT VMTK_INSTALL_LIB_DIR)
-  set(VMTK_INSTALL_LIB_DIR lib)
+  set(VMTK_INSTALL_LIB_DIR ${CMAKE_INSTALL_LIBDIR})
 endif()
 
 if(NOT VMTK_MODULE_INSTALL_LIB_DIR)
